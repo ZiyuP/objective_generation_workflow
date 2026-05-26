@@ -1,0 +1,70 @@
+Run a QA review on the lesson package below.
+
+LESSON ID: {lesson_id}
+
+SYSTEM PROMPT:
+{system_prompt}
+
+PRACTICE SCENARIOS:
+{scenarios_json}
+
+SCENARIO IMAGES:
+{images_json}
+
+Return ONLY a JSON object:
+
+{{
+  "lesson_id": "{lesson_id}",
+  "prompt_quality": [
+    {{"category": "Prompt Quality", "item": "...", "status": "pass | fail | warning", "notes": "..."}}
+  ],
+  "scenario_clarity": [
+    {{"category": "Scenario Clarity", "item": "...", "status": "pass | fail | warning", "notes": "..."}}
+  ],
+  "image_scenario_match": [
+    {{"category": "Image-Scenario Match", "item": "...", "status": "pass | fail | warning", "notes": "..."}}
+  ],
+  "description_length": [
+    {{"category": "Description Length", "item": "...", "status": "pass | fail | warning", "notes": "..."}}
+  ],
+  "tool_use_rules": [
+    {{"category": "Tool-Use Rules", "item": "...", "status": "pass | fail | warning", "notes": "..."}}
+  ],
+  "overall_pass": true,
+  "reviewer_notes": "summary of key findings and required fixes"
+}}
+
+QA CHECKLIST:
+
+PROMPT QUALITY — check each:
+- System prompt defines Nessa's persona with clear communication rules (short sentences, plain language)
+- System prompt specifies all response scenarios (correct / partial / incorrect / repeat)
+- show_rewards() trigger is precisely defined (once per item, immediately after success)
+- Praise-before-redirect pattern is stated
+- What counts as a "correct response" is topic-specific, not generic
+- Activity mechanics match the session script's activity_format
+
+SCENARIO CLARITY — check each:
+- Each nessa_prompt is 1-2 short sentences and sounds natural when spoken aloud
+- small_hint is indirect — does not directly state or paraphrase the target response
+- big_hint is more explicit than small_hint but still not a direct answer
+- The two hints are clearly different from each other
+- example_correct_response is concrete and specific to the scenario
+- All scenarios consistently match the activity_format (no mixing of formats)
+
+IMAGE-SCENARIO MATCH — check each:
+- Each image clearly shows the scenario setup the child needs to respond to
+- Image content matches what the scenario describes
+- Key elements listed would make the scenario context immediately clear
+- Image style is consistent across all scenarios
+
+DESCRIPTION LENGTH — check each:
+- Each child_description is ≤15 words
+- Each child_description starts with "In this picture"
+- Scenarios cover a range of difficulty (not all the same level)
+
+TOOL-USE RULES — check each:
+- System prompt only references show_rewards() as a function call
+- No scenario asks the child to share personal information
+- All content is appropriate for children
+- System prompt does not instruct Nessa to use external tools or search the web

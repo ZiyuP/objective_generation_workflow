@@ -1,0 +1,59 @@
+A lesson creator wants to build a new AutismGPT lesson for a child with autism.
+
+TOPIC / OBJECTIVE: "{idea}"
+
+Your task has three parts:
+1. IDENTIFY the skill type this topic belongs to.
+2. BRAINSTORM the best teaching approach for this specific topic with a child with autism.
+3. WRITE a short Nessa-child session script demonstrating that approach.
+
+━━━ CRITICAL RULES ━━━
+- Read the topic carefully. Choose a teaching approach that naturally fits IT — not one that fits past lesson examples.
+- Do NOT default to vocabulary / word definition format unless the topic explicitly says "learn the meaning of words" or "vocabulary."
+- Examples of NON-vocabulary topics and their natural formats:
+    • "Curious Questions" → child practices generating friendly, relevant questions after seeing a social picture
+    • "Recognizing when someone needs help" → child looks at a scene and identifies what the person needs
+    • "Saying goodbye" → child practices different goodbye phrases in different scenarios
+    • "Taking turns in a game" → child identifies whose turn it is and what to say
+- For vocabulary topics only: use a word-show-and-define format.
+- Use "Nessa" as the character name (not "Bot"). Use "Child" for the child's turns.
+- Past prompt library examples are style references only (short sentences, hints, praise, show_rewards). Ignore their content completely.
+
+━━━ SCRIPT FORMAT ━━━
+Show THREE ROUNDS for ONE example item from the lesson, demonstrating three response paths:
+- Round 1: Child struggles → small hint → partial answer → bigger hint → correct
+- Round 2: Child answers correctly on the first try
+- Round 3: Child struggles → small hint → still wrong → bigger hint → still stuck → Nessa reveals answer → child repeats
+
+Nessa rules: max 2 sentences per turn. Simple words. Praise before redirecting.
+Hints: small = indirect/evocative. Big = explicit/structural. Each is a separate turn from the follow-up question.
+After every success: show_rewards() (is_action: true), then a proud line, then transition.
+
+Return ONLY a JSON object:
+
+{{
+  "lesson_id": "short_snake_case_id",
+  "lesson_title": "descriptive lesson title",
+  "skill_type": "social communication | vocabulary | emotional regulation | social awareness | daily life skills | other",
+  "activity_format": "name of the specific game or activity (e.g. 'Question Practice', 'Word Mystery Game', 'Goodbye Scenarios', 'Emotion Detective')",
+  "teaching_rationale": "2-3 sentences: why this approach is a good fit for this topic AND for children with autism",
+  "topic_summary": "one sentence: what the child practices in this lesson",
+  "intro": [
+    {{"speaker": "Nessa", "text": "...", "is_action": false}},
+    {{"speaker": "Child", "text": "...", "is_action": false}}
+  ],
+  "rounds": [
+    {{
+      "round_number": 1,
+      "round_label": "brief label for this response path",
+      "dialog": [
+        {{"speaker": "Nessa", "text": "...", "is_action": false}},
+        {{"speaker": "Child", "text": "...", "is_action": false}},
+        {{"speaker": "Nessa", "text": "show_rewards()", "is_action": true}},
+        {{"speaker": "Nessa", "text": "...", "is_action": false}}
+      ]
+    }},
+    {{ "round_number": 2, "round_label": "...", "dialog": [...] }},
+    {{ "round_number": 3, "round_label": "...", "dialog": [...] }}
+  ]
+}}

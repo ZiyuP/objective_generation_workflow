@@ -1,0 +1,12 @@
+The lesson creator reviewed the teaching approach and session script below and gave feedback. Revise it to address all feedback.
+
+Do NOT change the skill_type or activity_format unless the feedback explicitly asks for a different teaching approach.
+Do NOT switch to a vocabulary format unless the feedback explicitly requests it.
+
+CURRENT SESSION SCRIPT:
+{current_json}
+
+FEEDBACK FROM LESSON CREATOR:
+{feedback}
+
+Return ONLY the revised JSON object with the exact same structure and all field names preserved.

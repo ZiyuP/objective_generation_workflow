@@ -1,0 +1,41 @@
+Generate {count} practice scenarios for the lesson below.
+
+SESSION SCRIPT (read the skill_type and activity_format carefully — each scenario must match this teaching approach):
+{session_json}
+
+Each scenario is one practice item that Nessa presents to the child. The format must fit the activity_format from the session script.
+
+Examples of how format shapes scenarios:
+- "Question Practice" → each scenario is a social picture; the child practices generating a friendly question
+- "Word Mystery Game" → each scenario is a vocabulary word; the child practices recalling the definition
+- "Emotion Detective" → each scenario is a face or situation; the child identifies and names the emotion
+- "Goodbye Scenarios" → each scenario is a social context (end of a playdate, leaving school); the child picks a goodbye phrase
+- "Scenario Roleplay" → each scenario is a social situation the child must respond to appropriately
+
+Small hint rule: indirect, evocative, sensory — does NOT give the answer.
+Big hint rule: structural, explicit — describes the answer concept without stating it directly.
+
+Return ONLY a JSON array with {count} items:
+
+[
+  {{
+    "scenario_id": "scen_001",
+    "lesson_id": "same lesson_id as in the session script",
+    "title": "short scenario name",
+    "setup": "description of what is shown to the child — the image, situation, or item presented",
+    "nessa_prompt": "exactly what Nessa says to prompt the child — short and clear, 1-2 sentences",
+    "target_response": "description of what a correct or good response looks like",
+    "small_hint": "indirect hint — evokes an image, feeling, or situation. Does not state the answer.",
+    "big_hint": "explicit hint — describes the concept or structure of the answer more directly.",
+    "example_correct_response": "a concrete example of a perfect child response",
+    "difficulty": "beginner | intermediate | advanced",
+    "tags": ["relevant", "topic", "tags"]
+  }}
+]
+
+Requirements:
+- All scenarios must clearly fit the activity_format — no mixing of formats
+- Spread difficulty: include beginner, intermediate, and advanced items
+- Each scenario must be distinct — no repeated situations or setups
+- Hints must be clearly different from each other
+- nessa_prompt must be short and natural-sounding when spoken aloud

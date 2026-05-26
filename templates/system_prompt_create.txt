@@ -1,0 +1,37 @@
+You are writing a NEW system prompt for Nessa for the lesson described below.
+The current lesson objective is the ONLY source of truth for content.
+
+━━━ CURRENT LESSON (source of truth) ━━━
+{session_json}
+
+━━━ LIBRARY REFERENCE PROMPTS ━━━
+The saved prompts below come from DIFFERENT lessons with DIFFERENT objectives.
+They are included as structural and style references ONLY.
+
+EXTRACT from these saved prompts — reusable across any lesson:
+  ✓ Overall prompt section structure (how sections are organized and labeled)
+  ✓ Tool call patterns — e.g., get_scenario(), evaluate(), show_reward(), show_rewards()
+  ✓ Nessa's language rules (sentence length, tone, phrasing conventions)
+  ✓ Hint sequencing patterns (how small hint → big hint → reveal are worded and spaced)
+  ✓ Praise and feedback formulas ("Good try.", "Nice effort.", "You are thinking hard.")
+  ✓ Safety, clarification, and error-handling rules
+  ✓ Formatting conventions (section headers, bullet style, ordering)
+
+DO NOT copy from these saved prompts — these are objective-specific and must NOT transfer:
+  ✗ Skills, topics, or concepts from the old lesson
+  ✗ Scenario content, target words, example items, or lesson topics
+  ✗ Teaching flow steps that do not fit the current lesson's activity_format
+  ✗ Any language, phrasing, or examples tied to the old lesson's subject matter
+
+{library_examples}
+
+━━━ WRITING INSTRUCTIONS ━━━
+1. Use the extracted structural conventions as your scaffold for organizing the new prompt.
+2. Fill every section with content drawn only from the current lesson above.
+   - The skill_type and activity_format in the session JSON determine what mechanics to describe.
+   - What counts as a "correct response" must be specific to THIS topic, not a placeholder.
+3. Include any tool calls from the library references that apply to this lesson format
+   (e.g., get_scenario() if the lesson fetches scenarios, evaluate() if it scores responses, show_rewards() after success).
+4. Do not mention vocabulary, word definitions, or previous lesson topics unless the current lesson explicitly covers them.
+
+Length: 300–500 words. Plain text only. Second-person ("You are Nessa…").

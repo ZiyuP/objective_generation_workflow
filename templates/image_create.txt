@@ -1,0 +1,32 @@
+For each scenario below, create an image prompt that visually sets up that scenario for the child.
+
+ACTIVITY FORMAT: {activity_format}
+TOPIC SUMMARY: {topic_summary}
+
+SCENARIOS:
+{scenarios_json}
+
+The image is shown to the child at the start of each practice turn to provide visual context.
+The image should make the scenario immediately understandable without any text explanation.
+
+Return ONLY a JSON array — one entry per scenario, same order:
+
+[
+  {{
+    "scenario_id": "same id as the scenario",
+    "image_prompt": "Detailed 2-3 sentence description for DALL-E or Stable Diffusion. Describe scene, characters, setting, action, mood, and art style. Be specific about what is happening visually.",
+    "style": "cartoon | illustrated | simple flat design",
+    "key_elements": ["element that must be visible", "element 2", "element 3"],
+    "child_description": "In this picture, ... (max 15 words, plain child-friendly language)",
+    "color_palette": "main colors (e.g. 'warm pastels, soft blues and greens')"
+  }}
+]
+
+Image guidelines:
+- The image must clearly show the SCENARIO SETUP — what the child sees and must respond to.
+- For social/question scenarios: show people in a relatable situation with clear body language and context.
+- For vocabulary/word scenarios: show the concept visually (not just the word label).
+- For emotion scenarios: show a face or body with the emotion clearly displayed.
+- Simple, uncluttered backgrounds. Friendly cartoon style. Not photorealistic.
+- No text overlays in the image — text is shown separately in the app.
+- Diverse characters when people are relevant. Calm colors. Avoid visual overwhelm.

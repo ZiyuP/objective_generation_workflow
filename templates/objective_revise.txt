@@ -1,0 +1,9 @@
+The lesson creator reviewed the Objective Brief below and provided feedback. Revise the brief to fully address the feedback.
+
+CURRENT OBJECTIVE BRIEF:
+{current_json}
+
+FEEDBACK FROM LESSON CREATOR:
+{feedback}
+
+Return ONLY the revised JSON object with the same structure as the original. Apply all feedback precisely.

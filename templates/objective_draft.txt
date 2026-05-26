@@ -1,0 +1,15 @@
+A lesson creator has submitted the following idea for a new AutismGPT lesson:
+
+"{idea}"
+
+Draft a detailed Objective Brief for this lesson. Return ONLY a JSON object with this exact structure:
+
+{{
+  "title": "concise lesson title",
+  "target_skill": "the primary skill category (e.g. social communication, emotion recognition, emotional regulation, daily life skills, social awareness)",
+  "age_group": "target age range (e.g. 3-6 years, 7-10 years, 11-13 years)",
+  "learning_goal": "one clear sentence describing what the child will be able to do after completing this lesson",
+  "brief": "2-3 paragraph description of the lesson rationale, relevance to autism, and expected outcomes",
+  "prerequisites": ["skill or knowledge the child should already have", "..."],
+  "success_criteria": ["observable, measurable outcome 1", "observable, measurable outcome 2", "..."]
+}}

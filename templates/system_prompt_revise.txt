@@ -1,0 +1,9 @@
+The lesson creator reviewed the AutismGPT system prompt below and provided feedback. Revise it to fully address the feedback.
+
+CURRENT SYSTEM PROMPT:
+{current_prompt}
+
+FEEDBACK FROM LESSON CREATOR:
+{feedback}
+
+Return ONLY the revised system prompt as plain text. No JSON, no headers. Same format and approximate length as the original.
